@@ -23,6 +23,6 @@ export default defineConfig({
 	},
 	trailingSlash: "never",
 	server: ({ command }) => ({
-		port: command === "preview" ? 3000 : 3000,
+		port: command === "preview" ? 5051 : 3000,
 	}),
 });
