@@ -37,13 +37,11 @@ By leveraging k6's versatile load testing capabilities, you can comprehensively 
 ### Step 2: Setting Up the k6 Environment
 Configuring k6 is seriously easy-peasy. Just follow some basic steps, kind of like making a sandwich, and you'll be cruising and ready to smash through any load testing hurdles.
 
-The first crucial move is making sure your web app or WordPress site is prepped and ready to get tested on. I'm working over here with a VPS in Amsterdam rocking 1 Core and 2GB RAM, and I just finished installing a fresh [WordPress instance](https://wp.rokimiftah.me).
+The first crucial move is making sure your [web app](https://react.rokimiftah.me) is prepped and ready to get tested on. The next step is to install k6 and Node.js depends on the operating system you are using.
 
-The next step is to install k6 and Node.js depends on the operating system you are using.
+-- k6: [https://grafana.com/docs/k6/latest/set-up/install-k6/](https://grafana.com/docs/k6/latest/set-up/install-k6/)
 
-k6: [https://grafana.com/docs/k6/latest/set-up/install-k6/](https://grafana.com/docs/k6/latest/set-up/install-k6/)
-
-Node.js: [https://nodejs.org/en/download/package-manager/current](https://nodejs.org/en/download/package-manager/current) 
+-- Node.js: [https://nodejs.org/en/download/package-manager/current](https://nodejs.org/en/download/package-manager/current) 
 
 Make sure we have installed k6 and Node.js properly by using command:
 
@@ -120,7 +118,7 @@ export const options = {
 };
 
 export default function () {
-  http.get('https://wp.rokimiftah.me');
+  http.get('https://react.rokimiftah.me');
   sleep(1);
 }
 ```
@@ -142,7 +140,7 @@ export const options = {
 };
 
 export default function () {
-  http.get('https://wp.rokimiftah.me');
+  http.get('https://react.rokimiftah.me');
   sleep(1);
 }
 ```
@@ -162,7 +160,7 @@ export const options = {
 };
 
 export default function () {
-  http.get('https://wp.rokimiftah.me');
+  http.get('https://react.rokimiftah.me');
   sleep(1);
 }
 ```
@@ -182,7 +180,7 @@ export const options = {
 };
 
 export default function () {
-  http.get('https://wp.rokimiftah.me');
+  http.get('https://react.rokimiftah.me');
   sleep(1);
 }
 ```
@@ -199,7 +197,7 @@ Next up, we define the parameters for the load testing scenario within the `opti
 Options reference: [https://grafana.com/docs/k6/latest/using-k6/k6-options/reference/](https://grafana.com/docs/k6/latest/using-k6/k6-options/reference/)
 
 ![](https://cdn.rokimiftah.me/blog/k6-load-testing-101/3.webp)
-The `export default function () { ... }` function serves as the entry point for the test scenario. This function will be executed once for each virtual user. Inside this function, we call `http.get()` to make an HTTP GET request to the specified URL. In our example, we access the `https://wp.rokimiftah.me` URL.
+The `export default function () { ... }` function serves as the entry point for the test scenario. This function will be executed once for each virtual user. Inside this function, we call `http.get()` to make an HTTP GET request to the specified URL. In our example, we access the `https://react.rokimiftah.me` URL.
 
 After the HTTP request, we invoke `sleep(1)` to simulate a 1-second think time. This represents the period when an actual user might be reading the page content or performing other actions before proceeding to the next step in the user flow.
 
@@ -236,9 +234,29 @@ k6 run minimal-test.js --out json=minimal-test.json
 </CodeBlockFrame>
 
 5. Result Analysis
-   - The test data reveals that the application under evaluation demonstrated the capability to sustain the simulated workload of 10 concurrent users without encountering any failures or errors, a commendable feat considering the substantial geographical separation between the testing location in Indonesia and the server's hosting site in Amsterdam. Nonetheless, the observed average response time of 609 milliseconds and the 95th percentile response duration of 1.32 seconds may be perceived as suboptimal, particularly when factoring in the network latency induced by the long-distance data transmission.
+    - Stability and Reliability: The application successfully handled a consistent load of 10 concurrent virtual users (VUs) over a 30-second period without any failures. This is evidenced by the 0% failure rate (http_req_failed: 0.00%) and the stable VU count throughout the test.
 
-Through a thorough examination of the test data procured from k6, and by taking into consideration the substantial physical distance separating the testing environment from the server infrastructure, you can identify potential bottlenecks that may be hindering optimal performance. Equipped with these valuable insights, you can make informed decisions aimed at enhancing your application's responsiveness, which may involve exploring techniques to alleviate the adverse effects of network latency on the user experience for individuals accessing your application from geographically dispersed locations.
+    - Throughput: The system processed an average of 8.39 requests per second, totaling 260 requests over the test duration. This throughput remained consistent, indicating stable performance under the given load.
+
+    - Response Times:
+
+        -- The average response time (http_req_duration) was 151.8ms, with a median of 130.78ms.
+
+        -- 90% of requests were completed within 220.49ms, and 95% within 275.19ms.
+
+        -- The maximum response time recorded was 564.72ms. These figures suggest reasonably good performance, with most requests being processed quickly.
+
+    - Network Behavior:
+
+        -- The average time spent waiting for a server response (http_req_waiting) was 136.43ms, constituting the majority of the total request duration.
+            
+        -- Initial connection times (http_req_connecting) were minimal, averaging just 318.26µs, indicating efficient connection reuse.
+
+    - Data Transfer: The application transferred data at a rate of 16 kB/s received and 556 B/s sent, which appears appropriate for the nature of the requests.
+
+    - Iteration Performance: Each iteration, likely representing a full user interaction cycle, took an average of 1.18 seconds, with 90% completing within 1.25 seconds.
+
+Overall, the application shows good performance characteristics for the tested load of 10 concurrent users, with no failures and generally quick response times.
 
 
 ### Conclusion
