@@ -188,18 +188,32 @@ export default function () {
 
 Alright, we have successfully created the required scripts. Now, let's break down each part of these scripts for better comprehension.
 
-![](https://cdn.rokimiftah.me/blog/k6-load-testing-101/1.webp)
-To begin, we take the `http` component from `k6/http` and the `sleep` function from `k6`. Meanwhile, the `sleep` function replicates the pause a user takes when not actively making requests, such as when reading page material or moving between different pages.
 
-![](https://cdn.rokimiftah.me/blog/k6-load-testing-101/2.webp)
+```js
+import http from 'k6/http';
+import { sleep } from 'k6';
+```
+To begin, we take the `http` component from `k6/http` and the `sleep` function from `k6`. Meanwhile, the `sleep` function replicates the pause a user takes when not actively making requests, such as when reading page material or moving between different pages.
+<br />
+
+```js
+export const options = {...};
+```
 Next up, we define the parameters for the load testing scenario within the `options` object. The `vus` (short for virtual users) setting dictates how many simulated users will be involved, whereas the `duration` setting controls how long the test will run. We use the stages setting to control the number of simulated users that increase and decrease during the test execution for the stress-test.js, spike-test.js, and soak-test.js scenarios.
 
 Options reference: [https://grafana.com/docs/k6/latest/using-k6/k6-options/reference/](https://grafana.com/docs/k6/latest/using-k6/k6-options/reference/)
+<br />
 
-![](https://cdn.rokimiftah.me/blog/k6-load-testing-101/3.webp)
+```js
+export default function () {
+  http.get('https://rokimiftah.me');
+  sleep(1);
+}
+```
 The `export default function () { ... }` function serves as the entry point for the test scenario. This function will be executed once for each virtual user. Inside this function, we call `http.get()` to make an HTTP GET request to the specified URL. In our example, we access the `https://rokimiftah.me` URL.
 
 After the HTTP request, we invoke `sleep(1)` to simulate a 1-second think time. This represents the period when an actual user might be reading the page content or performing other actions before proceeding to the next step in the user flow.
+<br />
 
 By understanding each part of these scripts, we can observe how k6 assists us in simulating user load and measuring our application's performance across various load testing scenarios. The `minimal-test.js` scenario runs 10 virtual users for 30 seconds, which is suitable for basic testing. `stress-test.js` gradually increases the load up to 200 virtual users, allowing us to evaluate the application's performance under high load conditions. `spike-test.js` simulates a traffic spike with 500 virtual users for 30 seconds, helping identify performance issues during sudden spikes in demand. And `soak-test.js` runs 100 virtual users for 2 hours, which is useful for detecting resource leaks or other performance issues that may arise after prolonged usage periods.
 
