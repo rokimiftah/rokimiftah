@@ -37,7 +37,7 @@ By leveraging k6's versatile load testing capabilities, you can comprehensively 
 ### Step 2: Setting Up the k6 Environment
 Configuring k6 is seriously easy-peasy. Just follow some basic steps, kind of like making a sandwich, and you'll be cruising and ready to smash through any load testing hurdles.
 
-The first crucial move is making sure your [web app](https://react.rokimiftah.me) is prepped and ready to get tested on. The next step is to install k6 and Node.js depends on the operating system you are using.
+The first crucial move is making sure your [web app](https://rokimiftah.me) is prepped and ready to get tested on. The next step is to install k6 and Node.js depends on the operating system you are using.
 
 -- k6: [https://grafana.com/docs/k6/latest/set-up/install-k6/](https://grafana.com/docs/k6/latest/set-up/install-k6/)
 
@@ -118,7 +118,7 @@ export const options = {
 };
 
 export default function () {
-  http.get('https://react.rokimiftah.me');
+  http.get('https://rokimiftah.me');
   sleep(1);
 }
 ```
@@ -140,7 +140,7 @@ export const options = {
 };
 
 export default function () {
-  http.get('https://react.rokimiftah.me');
+  http.get('https://rokimiftah.me');
   sleep(1);
 }
 ```
@@ -160,7 +160,7 @@ export const options = {
 };
 
 export default function () {
-  http.get('https://react.rokimiftah.me');
+  http.get('https://rokimiftah.me');
   sleep(1);
 }
 ```
@@ -180,7 +180,7 @@ export const options = {
 };
 
 export default function () {
-  http.get('https://react.rokimiftah.me');
+  http.get('https://rokimiftah.me');
   sleep(1);
 }
 ```
@@ -197,7 +197,7 @@ Next up, we define the parameters for the load testing scenario within the `opti
 Options reference: [https://grafana.com/docs/k6/latest/using-k6/k6-options/reference/](https://grafana.com/docs/k6/latest/using-k6/k6-options/reference/)
 
 ![](https://cdn.rokimiftah.me/blog/k6-load-testing-101/3.webp)
-The `export default function () { ... }` function serves as the entry point for the test scenario. This function will be executed once for each virtual user. Inside this function, we call `http.get()` to make an HTTP GET request to the specified URL. In our example, we access the `https://react.rokimiftah.me` URL.
+The `export default function () { ... }` function serves as the entry point for the test scenario. This function will be executed once for each virtual user. Inside this function, we call `http.get()` to make an HTTP GET request to the specified URL. In our example, we access the `https://rokimiftah.me` URL.
 
 After the HTTP request, we invoke `sleep(1)` to simulate a 1-second think time. This represents the period when an actual user might be reading the page content or performing other actions before proceeding to the next step in the user flow.
 
