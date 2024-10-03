@@ -9,27 +9,27 @@
 	},
 	"dependencies": {
 		"@astrojs/check": "^0.9.3",
-		"@astrojs/mdx": "^3.1.6",
-		"@astrojs/sitemap": "^3.1.6",
+		"@astrojs/mdx": "^3.1.7",
+		"@astrojs/sitemap": "^3.2.0",
 		"@astrojs/tailwind": "^5.1.1",
 		"@fontsource/manrope": "^5.1.0",
 		"@fontsource/onest": "^5.1.0",
 		"@fontsource/open-sans": "^5.1.0",
 		"@tailwindcss/typography": "^0.5.15",
-		"astro": "^4.15.7",
+		"astro": "^4.15.11",
 		"astro-seo": "^0.8.4",
 		"clsx": "^2.1.1",
 		"sharp": "^0.33.5",
 		"tailwind-merge": "^2.5.2",
-		"tailwindcss": "^3.4.12",
+		"tailwindcss": "^3.4.13",
 		"typescript": "^5.6.2"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "^1.9.1",
+		"@biomejs/biome": "^1.9.3",
 		"prettier": "^3.3.3",
 		"prettier-plugin-astro": "^0.14.1",
-		"prettier-plugin-astro-organize-imports": "^0.4.9",
-		"prettier-plugin-tailwindcss": "^0.6.6"
+		"prettier-plugin-astro-organize-imports": "^0.4.10",
+		"prettier-plugin-tailwindcss": "^0.6.8"
 	},
 	"engines": {
 		"node": ">=18.0.0"
