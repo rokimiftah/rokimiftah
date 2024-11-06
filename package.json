@@ -9,14 +9,14 @@
 	},
 	"dependencies": {
 		"@astrojs/check": "^0.9.4",
-		"@astrojs/mdx": "^3.1.8",
+		"@astrojs/mdx": "^3.1.9",
 		"@astrojs/sitemap": "^3.2.1",
 		"@astrojs/tailwind": "^5.1.2",
 		"@fontsource/manrope": "^5.1.0",
 		"@fontsource/onest": "^5.1.0",
 		"@fontsource/open-sans": "^5.1.0",
 		"@tailwindcss/typography": "^0.5.15",
-		"astro": "^4.16.7",
+		"astro": "^4.16.9",
 		"astro-seo": "^0.8.4",
 		"clsx": "^2.1.1",
 		"sharp": "^0.33.5",
@@ -28,7 +28,7 @@
 		"@biomejs/biome": "^1.9.4",
 		"prettier": "^3.3.3",
 		"prettier-plugin-astro": "^0.14.1",
-		"prettier-plugin-astro-organize-imports": "^0.4.10",
+		"prettier-plugin-astro-organize-imports": "^0.4.11",
 		"prettier-plugin-tailwindcss": "^0.6.8"
 	},
 	"engines": {
