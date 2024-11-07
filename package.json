@@ -16,7 +16,7 @@
     "@fontsource/onest": "^5.1.0",
     "@fontsource/open-sans": "^5.1.0",
     "@tailwindcss/typography": "^0.5.15",
-    "astro": "^4.16.9",
+    "astro": "^4.16.10",
     "astro-seo": "^0.8.4",
     "clsx": "^2.1.1",
     "sharp": "^0.33.5",
@@ -35,6 +35,8 @@
     "node": ">=18.0.0"
   },
   "trustedDependencies": [
-    "@biomejs/biome"
+    "@biomejs/biome",
+    "esbuild",
+    "sharp"
   ]
 }
