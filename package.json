@@ -31,9 +31,6 @@
     "prettier-plugin-astro-organize-imports": "^0.4.11",
     "prettier-plugin-tailwindcss": "^0.6.8"
   },
-  "engines": {
-    "node": ">=18.0.0"
-  },
   "trustedDependencies": [
     "@biomejs/biome",
     "esbuild",
