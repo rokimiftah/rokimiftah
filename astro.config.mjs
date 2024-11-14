@@ -22,9 +22,6 @@ export default defineConfig({
 		},
 	},
 	trailingSlash: "never",
-	build: {
-		format: "file",
-	},
 	server: ({ command }) => ({
 		host: true,
 		port: command === "preview" ? 7777 : 3000,
