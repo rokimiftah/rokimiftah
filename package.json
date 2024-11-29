@@ -16,20 +16,20 @@
 		"@fontsource/onest": "^5.1.0",
 		"@fontsource/open-sans": "^5.1.0",
 		"@tailwindcss/typography": "^0.5.15",
-		"astro": "^4.16.10",
+		"astro": "^4.16.16",
 		"astro-seo": "^0.8.4",
 		"clsx": "^2.1.1",
 		"sharp": "^0.33.5",
-		"tailwind-merge": "^2.5.4",
-		"tailwindcss": "^3.4.14",
-		"typescript": "^5.6.3"
+		"tailwind-merge": "^2.5.5",
+		"tailwindcss": "^3.4.15",
+		"typescript": "^5.7.2"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "^1.9.4",
-		"prettier": "^3.3.3",
+		"prettier": "^3.4.1",
 		"prettier-plugin-astro": "^0.14.1",
 		"prettier-plugin-astro-organize-imports": "^0.4.11",
-		"prettier-plugin-tailwindcss": "^0.6.8"
+		"prettier-plugin-tailwindcss": "^0.6.9"
 	},
 	"trustedDependencies": [
 		"@biomejs/biome",
