@@ -1,9 +1,9 @@
 <p align="center">
-	<a href="https://rokimiftah.me" target="_blank"
+	<a href="https://rokimiftah.id" target="_blank"
 		><img
 			src="https://img.shields.io/badge/-website-2ea44f?style=for-the-badge"
 	/></a>
-	<a href="mailto:me@rokimiftah.me" target="_blank"
+	<a href="mailto:me@rokimiftah.id" target="_blank"
 		><img
 			src="https://img.shields.io/badge/-email-c14438?style=for-the-badge"
 	/></a>
