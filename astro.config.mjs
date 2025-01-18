@@ -17,7 +17,7 @@ export default defineConfig({
 	},
 	markdown: {
 		shikiConfig: {
-			theme: "vitesse-black",
+			theme: "aurora-x",
 			wrap: false,
 		},
 	},
