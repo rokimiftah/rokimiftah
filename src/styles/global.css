@@ -24,7 +24,7 @@ body {
 }
 
 body {
-	@apply flex flex-col bg-[#faf9f6] font-sans text-[#46433b] antialiased;
+	@apply flex flex-col bg-[#ffffff] font-sans text-[#46433b] antialiased;
 	-ms-overflow-style: none;
 	scrollbar-width: none;
 }
@@ -49,7 +49,7 @@ article {
 	}
 
 	article a:hover {
-		@apply rounded bg-[#46433b] text-[#faf9f6] no-underline;
+		@apply rounded bg-[#46433b] text-[#ffffff] no-underline;
 	}
 }
 
