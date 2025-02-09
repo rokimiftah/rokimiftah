@@ -47,7 +47,7 @@ jobs:
 
       - name: Deploy application on VPS
         run: |
-          ssh -i ~/.ssh/id_ed25519 roki@[${{ secrets.SSH_HOST }}] "
+          ssh -i ~/.ssh/id_ed25519 roki@${{ secrets.SSH_HOST }} "
             cd ${{ secrets.TARGET_DIRECTORY }} && \
             ls | grep -v 'build.tar.gz' | xargs rm -rf && \
             tar -xzvf build.tar.gz && \
