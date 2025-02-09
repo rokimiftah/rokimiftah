@@ -45,11 +45,11 @@ jobs:
 
       - name: Deploy application on VPS
         run: |
-          rsync -avz --delete -c -e "ssh -i ~/.ssh/id_ed25519" ./dist/ roki@${{ secrets.SSH_HOST }}:${{ secrets.TARGET_DIRECTORY }}/
+          rsync -avz --delete -c -e "ssh -i ~/.ssh/id_ed25519" ./dist/ roki@[${{ secrets.SSH_HOST }}]:${{ secrets.TARGET_DIRECTORY }}/
 
       - name: Restart application
         run: |
-          ssh -i ~/.ssh/id_ed25519 roki@${{ secrets.SSH_HOST }} "
+          ssh -i ~/.ssh/id_ed25519 roki@[${{ secrets.SSH_HOST }}] "
             pm2 restart 0 && \
             rm -rf ~/.cache && \
             rm -rf ~/.local/share/zsh/chpwd-recent-dirs && \
