@@ -6,10 +6,28 @@ on:
       - main
 
 jobs:
-  Deploy:
+  Build-and-Deploy:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Bun
+        uses: oven-sh/setup-bun@v2
+
+      - name: Install dependencies
+        run: |
+          bun install
+
+      - name: Build application
+        run: |
+          bun run build
+
+      - name: Archive build artifacts
+        run: |
+          tar -czvf build.tar.gz -C dist .
+
       - name: Install WARP
         run: |
           sudo apt update
@@ -29,18 +47,17 @@ jobs:
           chmod 400 ~/.ssh/id_ed25519
           ssh-keyscan ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
 
-      - name: Deploy Application
+      - name: Upload build artifacts to VPS
         run: |
-          ssh roki@${{ secrets.SSH_HOST }} "
-            cd ~/projects/rokimiftah.id/rokimiftah
-            git pull
-            bun install
-            bun update
-            bun run build
+          scp -i ~/.ssh/id_ed25519 build.tar.gz roki@[${{ secrets.SSH_HOST }}]:~/projects/rokimiftah.id/rokimiftah/build.tar.gz
+
+      - name: Deploy application on VPS
+        run: |
+          ssh -i ~/.ssh/id_ed25519 roki@${{ secrets.SSH_HOST }} "
+            mkdir -p ~/projects/rokimiftah.id/rokimiftah && \
+            cd ~/projects/rokimiftah.id/rokimiftah && \
+            ls | grep -v 'build.tar.gz' | xargs rm -rf && \
+            tar -xzvf build.tar.gz && \
+            rm -rf build.tar.gz && \
             pm2 restart 0
-            pm2 reset all
-            rm -rf ~/.cache
-            rm -rf ~/.local/share/zsh/chpwd-recent-dirs
-            rm -rf ~/.zsh_history
-            rm -rf ~/.z
           "
