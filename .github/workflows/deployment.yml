@@ -49,13 +49,13 @@ jobs:
 
       - name: Upload build artifacts to VPS
         run: |
-          scp -i ~/.ssh/id_ed25519 build.tar.gz roki@[${{ secrets.SSH_HOST }}]:~/projects/rokimiftah.id/rokimiftah/build.tar.gz
+          scp -i ~/.ssh/id_ed25519 build.tar.gz roki@[${{ secrets.SSH_HOST }}]:${{ secrets.TARGET_DIRECTORY }}/build.tar.gz
 
       - name: Deploy application on VPS
         run: |
           ssh -i ~/.ssh/id_ed25519 roki@${{ secrets.SSH_HOST }} "
-            mkdir -p ~/projects/rokimiftah.id/rokimiftah && \
-            cd ~/projects/rokimiftah.id/rokimiftah && \
+            mkdir -p ${{ secrets.TARGET_DIRECTORY }} && \
+            cd ${{ secrets.TARGET_DIRECTORY }} && \
             ls | grep -v 'build.tar.gz' | xargs rm -rf && \
             tar -xzvf build.tar.gz && \
             rm -rf build.tar.gz && \
