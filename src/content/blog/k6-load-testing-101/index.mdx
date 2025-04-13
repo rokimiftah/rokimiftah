@@ -37,7 +37,7 @@ By leveraging k6's versatile load testing capabilities, you can comprehensively 
 ### Step 2: Setting Up the k6 Environment
 Configuring k6 is seriously easy-peasy. Just follow some basic steps, kind of like making a sandwich, and you'll be cruising and ready to smash through any load testing hurdles.
 
-The first crucial move is making sure your [web app](https://rokimiftah.me) is prepped and ready to get tested on. The next step is to install k6 and Node.js depends on the operating system you are using.
+The first crucial move is making sure your [web app](https://me.rokimiftah.me) is prepped and ready to get tested on. The next step is to install k6 and Node.js depends on the operating system you are using.
 
 -- k6: [https://grafana.com/docs/k6/latest/set-up/install-k6/](https://grafana.com/docs/k6/latest/set-up/install-k6/)
 
@@ -118,7 +118,7 @@ export const options = {
 };
 
 export default function () {
-  http.get('https://rokimiftah.me');
+  http.get('https://me.rokimiftah.me');
   sleep(1);
 }
 ```
@@ -140,7 +140,7 @@ export const options = {
 };
 
 export default function () {
-  http.get('https://rokimiftah.me');
+  http.get('https://me.rokimiftah.me');
   sleep(1);
 }
 ```
@@ -160,7 +160,7 @@ export const options = {
 };
 
 export default function () {
-  http.get('https://rokimiftah.me');
+  http.get('https://me.rokimiftah.me');
   sleep(1);
 }
 ```
@@ -180,7 +180,7 @@ export const options = {
 };
 
 export default function () {
-  http.get('https://rokimiftah.me');
+  http.get('https://me.rokimiftah.me');
   sleep(1);
 }
 ```
@@ -207,11 +207,11 @@ Options reference: [https://grafana.com/docs/k6/latest/using-k6/k6-options/refer
 
 ```js
 export default function () {
-  http.get('https://rokimiftah.me');
+  http.get('https://me.rokimiftah.me');
   sleep(1);
 }
 ```
-The `export default function () { ... }` function serves as the entry point for the test scenario. This function will be executed once for each virtual user. Inside this function, we call `http.get()` to make an HTTP GET request to the specified URL. In our example, we access the `https://rokimiftah.me` URL.
+The `export default function () { ... }` function serves as the entry point for the test scenario. This function will be executed once for each virtual user. Inside this function, we call `http.get()` to make an HTTP GET request to the specified URL. In our example, we access the `https://me.rokimiftah.me` URL.
 
 After the HTTP request, we invoke `sleep(1)` to simulate a 1-second think time. This represents the period when an actual user might be reading the page content or performing other actions before proceeding to the next step in the user flow.
 <br />
@@ -237,7 +237,7 @@ k6 run minimal-test.js
 2. Test Results
    - Once the test run has concluded, k6 will present a comprehensive summary encapsulating the test results, encompassing pivotal performance indicators. This synopsis will incorporate critical metrics such as the rate at which requests were processed, the observed response durations, the frequency of errors or failures encountered, and any other pertinent statistical data relevant to evaluating the system's performance under the simulated load conditions
 
-![](https://cdn.rokimiftah.id/blog/k6-load-testing-101/1.avif)
+![](https://cdn.rokimiftah.me/blog/k6-load-testing-101/1.avif)
 
 4. Result Output
    - In addition to the real-time display, k6 offers the capability to persist the test results in formats conducive to human comprehension, such as JSON or CSV. This feature facilitates further analysis and visualization of the data obtained during the test execution. To leverage this functionality, you can invoke the `k6 run` command with an additional flag, specifying the desired output format and file name. The command syntax would resemble: `k6 run [script_file_name] --out [output_format]=[output_file_name].[output_extension]`.

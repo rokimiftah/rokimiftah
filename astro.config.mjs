@@ -4,7 +4,7 @@ import tailwind from "@astrojs/tailwind";
 import { defineConfig } from "astro/config";
 
 export default defineConfig({
-	site: "https://rokimiftah.id",
+	site: "https://rokimiftah.me",
 	integrations: [
 		mdx(),
 		sitemap({

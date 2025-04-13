@@ -2,7 +2,7 @@ import type { Metadata, Site, Socials } from "@types";
 
 export const SITE: Site = {
 	NAME: "Roki Miftah Kamaludin",
-	EMAIL: "me@rokimiftah.id",
+	EMAIL: "me@rokimiftah.me",
 	NUM_POSTS_ON_HOMEPAGE: 2,
 	NUM_PROJECTS_ON_HOMEPAGE: 2,
 };
@@ -26,10 +26,10 @@ export const PROJECTS: Metadata = {
 export const SOCIALS: Socials = [
 	{
 		NAME: "GitHub",
-		HREF: "https://go.rokimiftah.id/github",
+		HREF: "https://go.rokimiftah.me/github",
 	},
 	{
 		NAME: "LinkedIn",
-		HREF: "https://go.rokimiftah.id/linkedin",
+		HREF: "https://go.rokimiftah.me/linkedin",
 	},
 ];
