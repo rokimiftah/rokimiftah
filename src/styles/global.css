@@ -1,6 +1,10 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@theme {
+	--font-sans: "Open Sans", "sans-serif";
+	--font-onest: "Onest", "sans-serif";
+}
 
 /* Global styles */
 * {
@@ -31,7 +35,7 @@ body {
 
 /* Layout components */
 header {
-	@apply left-0 right-0 top-0 m-5;
+	@apply top-0 right-0 left-0 m-5;
 }
 
 main {
@@ -40,16 +44,16 @@ main {
 
 /* Typography */
 article {
-	@apply prose max-w-full prose-headings:font-onest prose-headings:font-bold prose-headings:text-[#1a1916] prose-p:font-sans prose-p:text-[#46433b] prose-img:mx-auto prose-img:my-auto;
+	@apply prose prose-headings:font-onest prose-headings:font-bold prose-headings:text-[#1a1916] prose-p:font-sans prose-p:text-[#46433b] prose-img:mx-auto prose-img:my-auto max-w-full;
 }
 
 @layer utilities {
 	article a {
-		@apply rounded font-sans not-italic text-[#46433b] underline underline-offset-2 transition-colors duration-200 ease-in-out;
+		@apply rounded font-sans !text-[#46433b] not-italic underline underline-offset-2 transition-colors duration-200 ease-in-out;
 	}
 
 	article a:hover {
-		@apply rounded bg-[#46433b] text-[#ffffff] no-underline;
+		@apply rounded !bg-[#46433b] !text-[#ffffff] !no-underline;
 	}
 }
 
@@ -59,7 +63,7 @@ article {
 }
 
 .copy-code {
-	@apply absolute right-1 top-[6px] cursor-pointer text-xs;
+	@apply absolute top-[6px] right-1 cursor-pointer text-xs;
 }
 
 /* Table styles */
@@ -94,7 +98,7 @@ li {
 
 /* Link styles */
 a {
-	@apply cursor-pointer transition-colors duration-200 ease-in-out;
+	@apply transition-colors duration-200 ease-in-out;
 }
 
 /* Miscellaneous */

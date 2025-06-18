@@ -1,6 +1,6 @@
 import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
-import tailwind from "@astrojs/tailwind";
+import tailwindcss from "@tailwindcss/vite";
 import { defineConfig } from "astro/config";
 
 export default defineConfig({
@@ -10,7 +10,6 @@ export default defineConfig({
 		sitemap({
 			lastmod: new Date(),
 		}),
-		tailwind(),
 	],
 	devToolbar: {
 		enabled: false,
@@ -27,6 +26,7 @@ export default defineConfig({
 		port: 3000,
 	}),
 	vite: {
+		plugins: [tailwindcss()],
 		server: {
 			allowedHosts: "dev.rokimiftah.me",
 		},
