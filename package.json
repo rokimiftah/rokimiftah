@@ -16,7 +16,7 @@
 		"@fontsource/open-sans": "^5.2.6",
 		"@tailwindcss/typography": "^0.5.16",
 		"@tailwindcss/vite": "^4.1.10",
-		"astro": "^5.9.4",
+		"astro": "^5.10.0",
 		"astro-seo": "^0.8.4",
 		"clsx": "^2.1.1",
 		"sharp": "^0.33.5",
@@ -29,7 +29,7 @@
 		"prettier": "^3.5.3",
 		"prettier-plugin-astro": "^0.14.1",
 		"prettier-plugin-astro-organize-imports": "^0.4.11",
-		"prettier-plugin-tailwindcss": "^0.6.12"
+		"prettier-plugin-tailwindcss": "^0.6.13"
 	},
 	"trustedDependencies": [
 		"@biomejs/biome",
